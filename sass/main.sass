@@ -1,0 +1,643 @@
+//Import
+@import reset
+
+//Primary
+
+$darkViolet: hsl(256, 26%, 20%)
+$grayishBlue: hsl(216, 30%, 68%)
+
+//Neutral
+
+$verydarkViolet: hsl(270, 9%, 17%)
+$darkgrayishViolet: hsl(273, 4%, 51%)
+$veryLightGray: hsl(0, 0%, 98%)
+
+//Default font-size
+$dfont-size: 16px
+
+//Headings font, weights 400
+$fontfHeadings: 'DM Serif Display', serif
+
+//Body font , weights 400,700
+$fontfBody: 'Karla', sans-serif;
+body
+    font-family: $fontfBody
+    font-size: 16px
+    background: $veryLightGray
+.wrapper
+    max-width: 1440px
+    margin: 0 auto
+    display: flex
+.desktop
+    display: none
+    @media (min-width: 1200px)
+        display: block
+.mobile
+    display: block
+    @media (min-width: 1200px)
+        display: none
+.button
+    text-transform: uppercase
+    font-family: $fontfBody
+    font-size: 1.2rem
+    background: transparent
+    color: $veryLightGray
+    border: 2px solid $veryLightGray
+.container
+    text-align: center
+    position: relative
+    padding: 30px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    @media (min-width: 533px) and (orientation: landscape)
+        padding: 10px
+    @media (min-width: 1200px)    
+        padding: 0px
+        text-align: left
+//MENU
+.menu
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 15px 0
+    position: fixed
+    top: 0
+    width: 100%
+    background: $veryLightGray
+    z-index: 999
+    @media (min-width: 768px) and (orientation: portrait)
+        min-height: 11vh
+    @media (min-width: 1200px)
+        position: static
+    &__logo
+        display: flex
+        align-items: center
+        margin-left: 15px
+        @media (min-width: 1200px)
+            margin-left: 0px
+    &__logo-image
+        @media (min-width: 768px) and (orientation: portrait)
+            height: 20px
+            width: auto
+        @media (min-width: 992px)
+            width: auto
+            height: 20px
+    &__list
+        background: $verydarkViolet
+        display: flex
+        flex-direction: column
+        align-items: center
+        position: absolute
+        top: 100%
+        width: 100%
+        z-index: 1
+        visibility: hidden
+        opacity: 0
+        height: 0
+        transition: all .5s ease
+        @media (min-width: 1200px)
+            flex-direction: row
+            justify-content: flex-end
+            position: static
+            visibility: visible
+            opacity: 1
+            height: auto
+            transition: none
+            background: $veryLightGray
+        &--open
+            visibility: visible
+            opacity: 1
+            height: calc(100vh - 69px)
+            @media (min-width: 533px) and (orientation: landscape)
+                height: calc(100vh - 66px)
+            @media (min-width: 1200px)
+                height: auto
+    &__link
+        list-style: none
+        padding: 0.8rem 0
+        margin-top: 20px
+        @media (min-width: 533px) and (orientation: landscape)
+            margin-top: 10px
+        @media (min-width: 736px) and (orientation: landscape)
+            margin-top: 15px
+        @media (min-width: 768px) and (orientation: portrait)
+            margin: 3rem 0
+        @media (min-width: 992px)
+            margin: 4rem 0
+        @media (min-width: 1200px)
+            margin: 0rem 0
+    &__item
+        color: $veryLightGray
+        text-decoration: none
+        text-transform: uppercase
+        font-size: 1.2rem
+        justify-content: center
+        z-index: 2
+        @media (min-width: 768px) and (orientation: portrait)
+            font-size: 2rem
+        @media (min-width: 992px)
+            font-size: 3rem
+        @media (min-width: 1200px)
+            color: $darkgrayishViolet
+            font-size: 1.2rem
+            margin-left: 55px
+            transition: color .2s ease
+            &:hover
+                color: $darkViolet
+            
+    &__btn-viewplans
+        padding: 10px 40px
+        z-index: 2
+        @media (min-width: 768px) and (orientation: portrait)
+            font-size: 2rem
+            padding: 15px 50px
+        @media (min-width: 992px)
+            font-size: 3rem
+        @media (min-width: 1200px)
+            font-size: 1.2rem
+            color: $darkViolet
+            border-color: $darkViolet
+            cursor: pointer
+            transition: background .4s ease-out
+            &:hover
+                background: $verydarkViolet
+                color: $veryLightGray
+    &__pattern
+        position: absolute
+        bottom: 0
+        right: 0
+        height: 32vh
+        width: 100%
+        z-index: 1
+        @media (min-width: 1200px)
+            display: none
+    &__close-btn,&__hamburger-btn
+        display: none
+        border: none
+        &--active
+            display: inline-flex
+            cursor: pointer
+            margin-right: 15px
+        @media (min-width: 1200px)
+            display: none
+    &__icon-hamburger-btn,&__icon-close-btn
+        @media (min-width: 768px) and (orientation: portrait)
+            min-height: 4vh
+        @media (min-width: 992px)
+            min-height: 5vh
+           
+//HEADER
+.header
+    background: $darkViolet
+    color: $veryLightGray
+    margin-top: 68px
+    display: flex
+    position: relative
+    justify-content: space-around
+    @media (min-width: 1200px)
+        margin-top: 0px
+.hero
+    display: flex
+    @media (min-width: 1200px)
+        height: 700px
+    &__wrapper
+        flex-direction: column
+        @media (min-width:533px) and (orientation: landscape)
+            flex-direction: row-reverse
+        @media (min-width: 1024px)
+            flex-direction: row-reverse
+        @media (min-width: 1200px)
+            flex-direction: row-reverse
+    &__banner-img
+        width: 100%
+        height: calc(100vh - 66px)
+        @media (min-width:533px) and (orientation: landscape)
+            width: auto
+            height: calc(100vh - 69px)
+        @media (min-width: 768px) and (orientation: portrait)
+            width: 100%
+        @media (min-width: 1024px)
+            width: 50vh
+        @media (min-width: 1200px)
+            margin-top: 100px
+            height: 670px
+            width: auto
+    &__title
+        margin-bottom: 30px
+        font-size: 2.5rem
+        font-family: $fontfHeadings
+        z-index: 2
+        @media (min-width:533px) and (orientation: landscape)
+            margin-bottom: 10px
+            font-size: 1.5rem
+        @media (min-width: 768px) and (orientation: portrait)
+            font-size: 3.5rem
+        @media (min-width: 992px)
+            font-size: 3rem
+        @media (min-width: 1200px)
+            font-size: 4.2rem
+            letter-spacing: 1px
+            width: 57%
+    &__discription
+        margin-bottom: 30px
+        z-index: 2
+        @media (min-width:533px) and (orientation: landscape)
+            margin-bottom: 25px
+        @media (min-width: 768px) and (orientation: portrait)
+            font-size: 1.5rem
+            margin: 50px 0 50px 0
+        @media (min-width: 992px)
+            font-size: 1.5rem
+            margin: 50px 0 70px 0
+        @media (min-width: 1200px)
+            font-size: 1.3rem
+            width: 80%
+    &__button
+        margin: 0 auto
+        padding: 0.5rem 2rem
+        z-index: 2
+        @media (min-width:533px) and (orientation: landscape)
+            padding: 0.5rem 1.5rem
+            font-size: 1rem
+        @media (min-width: 768px) and (orientation: portrait)
+            padding: 1rem 3rem
+            font-size: 1.6rem
+        @media (min-width: 992px)
+            font-size: 1.5rem
+            padding: 1rem 4rem
+        @media (min-width: 1200px)
+            margin: 0
+            font-size: 1.2rem
+            padding: 15px 50px
+            cursor: pointer
+            transition: background .4s ease-out
+            &:hover
+                background: $veryLightGray
+                color: $darkViolet
+    &__pattern-left,&__pattern-right
+        position: absolute
+    &__pattern-left
+        top: 0
+        left: 0
+        @media (min-width: 1200px)
+            top: 80%
+            left: 0
+    &__pattern-right
+        bottom: 0
+        right: 0
+        @media (min-width: 1200px)
+            right: 0
+            top: 0
+    &__container
+        height: 80vh
+        @media (min-width: 1200px)
+            align-items: flex-start
+            height: auto
+//SECTION we're-different
+.we-re-different
+    margin: 110px 0 60px 0
+    @media (min-width:533px) and (orientation: landscape)
+        margin: 80px 0
+    @media (min-width: 992px)
+        margin: 150px 0 120px 0
+    @media (min-width: 1200px)
+        margin: 150px 0
+    .wrapper
+        flex-direction: column
+    &__group-containers
+        @media (min-width: 1200px)
+            display: flex
+    &__icon
+        width: 12vh
+        margin: 30px auto
+        @media (min-width:533px) and (orientation: landscape)
+            width: 27vh
+            margin: 20px auto
+        @media (min-width: 768px) and (orientation: portrait)
+            width: 15vh
+        @media (min-width: 992px)
+            width: 18vh
+            margin: 50px auto
+        @media (min-width: 1200px)
+            height: 120px
+            width: auto
+            margin: 50px 0
+    &__main-title
+        font-size: 2.6rem
+        position: relative
+        text-align: center
+        font-family: $fontfHeadings
+        @media (min-width:533px) and (orientation: landscape)
+            font-size: 2.8rem
+        @media (min-width: 992px)
+            font-size: 5.5rem
+        @media (min-width: 1200px)
+            text-align: left
+            font-size: 4.5rem
+        &::before
+            content: ""
+            height: 2px
+            background: $darkgrayishViolet
+            position: absolute
+            top: -80%
+            width: 40%
+            right: 50%
+            transform: translateX(50%)
+            @media (min-width:533px) and (orientation: landscape)
+                top: -40%
+            @media (min-width: 1200px)
+                height: 2px
+                top: -10%
+                width: 10%
+                left: -5%
+    &__subheading
+        font-family: $fontfHeadings
+        margin-bottom: 15px
+        @media (min-width:533px) and (orientation: landscape)
+            font-size: 2.1rem
+        @media (min-width: 992px)
+            font-size: 3.2rem
+            margin-bottom: 20px
+        @media (min-width: 1200px)
+            font-size: 2rem
+    &__discription
+        @media (min-width: 768px) and (orientation: portrait)
+            font-size: 1.6rem
+        @media (min-width: 992px)
+            font-size: 2rem
+        @media (min-width: 1200px)
+            font-size: 1.2rem
+    &__container
+        padding: 15px 10px
+        @media (min-width:533px) and (orientation: landscape)
+            padding: 15px 30px
+        @media (min-width: 1200px)
+            align-items: flex-start
+
+//SECTION find out more
+.find-out-more
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    background: $darkViolet
+    color: $veryLightGray
+    padding: 20px
+    margin: 0 20px
+    position: relative
+    @media (min-width:731px)
+        padding: 35px
+    @media (min-width: 768px) and (orientation: portrait)
+        padding: 80px 0
+    @media (min-width: 1200px)
+        flex-direction: row
+        margin: 0 auto
+        justify-content: space-between
+    &__title
+        font-size: 2.2rem
+        font-family: $fontfHeadings
+        text-align: center
+        padding: 0 10px
+        z-index: 2
+        @media (min-width: 768px) and (orientation: portrait)
+            font-size: 2.5rem
+        @media (min-width: 992px)
+            font-size: 3.6rem
+        @media (min-width: 1200px)
+            text-align: left
+            width: 40%
+            margin-left: 30px
+    &__btn
+        margin-top: 30px
+        padding: 8px 22px
+        z-index: 2
+        @media (min-width: 768px) and (orientation: portrait)
+            font-size: 1.8rem
+        @media (min-width: 992px)
+            font-size: 2.3rem
+            margin-top: 60px
+        @media (min-width: 1200px)
+            margin-top: 0px
+            font-size: 1.5rem
+            cursor: pointer
+            margin-right: 30px
+            transition: background .4s ease-out
+            &:hover
+                background: $veryLightGray
+                color: $darkViolet
+    &__pattern
+        position: absolute
+        height: 100%
+        right: 0
+        top: 0
+//Footer
+.footer
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    position: relative
+    margin: 50px 0 10px
+    text-align: center
+    @media(min-width: 768px)
+        flex-direction: row
+        align-items: flex-start
+        margin: 100px auto 50px
+        text-align: left
+    &__container
+        flex-direction: column
+        @media (min-width: 768px)
+            flex-direction: row
+            flex-basis: 100%
+            justify-content: space-between
+    &__wrapper
+        flex-direction: column
+        width: 100%
+        @media (min-width: 768px)
+            flex-direction: row
+            flex-wrap: wrap
+    &__container
+        padding: 0
+        align-items: center
+    &__heading
+        color: $darkgrayishViolet
+        @media (min-width: 992px)
+            font-size: 1.4rem
+    &__logo
+        z-index: 2
+        @media (min-width: 768px)
+            flex-basis: 50%
+            align-self: center
+            text-align: left
+    &__logo-link
+        align-self: center
+    &__logo-image
+        @media (min-width: 992px)
+            height: 25px
+    &__link
+        list-style: none
+        margin: 15px 0
+    &__item
+        text-decoration: none
+        color: $darkViolet
+        text-transform: uppercase
+        font-weight: 700
+        letter-spacing: 1px
+        position: relative
+        z-index: 2
+        @media (min-width: 992px)
+            font-size: 1.2rem
+        @media (min-width: 1200px)
+            &::before
+                content: ""
+                height: 2px
+                bottom: 0
+                background: $darkViolet
+                width: 100%
+                position: absolute
+                opacity: 0
+                transition: opacity .2s
+            &:hover::before
+                opacity: 1
+    &__pattern
+        position: absolute
+        top: 0
+        left: 0
+        right: 0 
+        width: 100%
+        height: 20vh
+        @media (min-width: 768px)
+            width: auto
+            height: auto
+    &__our-company,
+    &__help-me,
+    &__contact,
+    &__others
+        margin: 15px 0
+        @media (min-width: 768px)
+            flex-basis: 25%
+        @media (min-width: 992px)
+            margin: 30px 0   
+    .social-media
+        margin: 0 auto
+        &__list
+            display: flex
+            margin: 30px 0
+        &__link
+            list-style: none
+            @media (min-width: 1200px)
+                cursor: pointer
+                z-index: 2
+        &__icon
+            margin: 0 15px
+            font-size: 2rem
+            color: $darkgrayishViolet
+            @media (min-width: 992px)
+                height: 25px
+                cursor: pointer
+                transition: opacity .4s ease
+                &:hover
+                    opacity: 0.6
+.line
+    background: $darkgrayishViolet
+    height: 2px
+    opacity: 0.5
+    width: 100%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+.attribution
+    font-size: 0.7rem
+    text-align: center
+    background: $darkViolet
+    color: $grayishBlue
+    min-height: 5vh
+    line-height: 5vh
+    @media(min-width: 768px) and (orientation: portrait)
+        font-size: 1.1rem
+        margin-top: 40px
+    @media (min-width: 992px)
+        font-size: 1.7rem
+    @media (min-width: 1200px)
+        font-size: 1.2rem
+    a 
+        color: $veryLightGray
+        font-weight: 700
+       
