@@ -492,7 +492,19 @@ body {
   .hero__title {
     font-size: 4.2rem;
     letter-spacing: 1px;
-    width: 57%;
+    width: 70%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero__title {
+    width: 75%;
+  }
+}
+
+@media (min-width: 1336px) {
+  .hero__title {
+    width: 80%;
   }
 }
 
@@ -882,8 +894,20 @@ body {
 @media (min-width: 1200px) {
   .find-out-more__title {
     text-align: left;
-    width: 40%;
+    width: 41%;
     margin-left: 30px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .find-out-more__title {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1336px) {
+  .find-out-more__title {
+    width: 50%;
   }
 }
 
