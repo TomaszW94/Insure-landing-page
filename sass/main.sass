@@ -28,6 +28,12 @@ body
     max-width: 1440px
     margin: 0 auto
     display: flex
+    @media (min-width: 1280px)
+        max-width: 1220px
+    @media (min-width: 1366px)
+        max-width: 1320px
+    @media (min-width: 1440px)
+        max-width: 1400px
 .desktop
     display: none
     @media (min-width: 1200px)
@@ -289,6 +295,13 @@ body
         @media (min-width: 1200px)
             right: 0
             top: 0
+            height: 30vh
+        @media (min-width: 1366px)
+            height: 28vh
+        @media (min-width: 1440px)
+            height: 30vh
+        @media (min-width: 1441px)
+            height: auto
     &__container
         height: 80vh
         @media (min-width: 1200px)
@@ -463,7 +476,8 @@ body
     &__heading
         color: $darkgrayishViolet
         @media (min-width: 992px)
-            font-size: 1.4rem
+            font-size: 1.2rem
+            margin-bottom: 45px
     &__logo
         z-index: 2
         @media (min-width: 768px)
@@ -507,6 +521,7 @@ body
         right: 0 
         width: 100%
         height: 20vh
+        z-index: -1
         @media (min-width: 768px)
             width: auto
             height: auto
